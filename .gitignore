@@ -1,0 +1,8 @@
+.serverless/
+
+csharp/bin/*/
+csharp/obj/*/
+
+.idea/
+
+java/target/
