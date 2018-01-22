@@ -3,19 +3,13 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp1.0</TargetFramework>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
-    <AssemblyName>FsharpHandlers</AssemblyName>
-    <PackageId>aws-fsharp</PackageId>
+    <AssemblyName>CsharpHandlers</AssemblyName>
+    <PackageId>aws-csharp</PackageId>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Include="Handler.fs" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Amazon.Lambda.Core" Version="1.0.0" />
     <PackageReference Include="Amazon.Lambda.Serialization.Json" Version="1.1.0" />
-    <PackageReference Include="FSharp.Core" Version="4.1.*" />
-    <PackageReference Include="FSharp.NET.Sdk" Version="1.0.*" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,3 +17,4 @@
   </ItemGroup>
 
 </Project>
+
