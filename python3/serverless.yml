@@ -11,7 +11,7 @@
 #
 # Happy Coding!
 
-service: aws-fsharp2
+service: aws-python3 # NOTE: update this with your service name
 
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
@@ -19,7 +19,7 @@ service: aws-fsharp2
 
 provider:
   name: aws
-  runtime: dotnetcore2.0
+  runtime: python3.6
 
 # you can overwrite defaults here
 #  stage: dev
@@ -39,22 +39,23 @@ provider:
 #          - ""
 #          - - "arn:aws:s3:::"
 #            - "Ref" : "ServerlessDeploymentBucket"
-#            - "/*"
 
 # you can define service wide environment variables here
 #  environment:
 #    variable1: value1
 
 # you can add packaging information here
-package:
-  artifact: bin/release/netcoreapp2.0/publish/deploy-package.zip
+#package:
+#  include:
+#    - include-me.py
+#    - include-me-dir/**
 #  exclude:
-#    - exclude-me.js
+#    - exclude-me.py
 #    - exclude-me-dir/**
 
 functions:
   hello:
-    handler: FsharpHandlers::AwsDotnetFsharp.Handler::hello
+    handler: handler.hello
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
@@ -68,22 +69,8 @@ functions:
 #      - sns: greeter-topic
 #      - stream: arn:aws:dynamodb:region:XXXXXX:table/foo/stream/1970-01-01T00:00:00.000
 #      - alexaSkill
-#      - alexaSmartHome: amzn1.ask.skill.xx-xx-xx-xx
 #      - iot:
 #          sql: "SELECT * FROM 'some_topic'"
-#      - cloudwatchEvent:
-#          event:
-#            source:
-#              - "aws.ec2"
-#            detail-type:
-#              - "EC2 Instance State-change Notification"
-#            detail:
-#              state:
-#                - pending
-#      - cloudwatchLog: '/aws/lambda/hello'
-#      - cognitoUserPool:
-#          pool: MyUserPool
-#          trigger: PreSignUp
 
 #    Define function environment variables here
 #    environment:
