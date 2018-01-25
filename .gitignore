@@ -1,8 +1,9 @@
 .serverless/
 
-csharp/bin/*/
-csharp/obj/*/
+*/bin/**
+*/obj/**
 
 .idea/
 
 java/target/
+apis.txt
