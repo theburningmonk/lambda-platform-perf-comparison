@@ -7,7 +7,7 @@ provider:
   stage: dev
   region: ${env:AWS_REGION}
 functions:
-  get:
+  hello:
     handler: handler.Get
     events:
       - http:
