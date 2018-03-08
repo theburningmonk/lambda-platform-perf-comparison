@@ -1,0 +1,15 @@
+service: aws-python-go
+package:
+  artifact: package.zip
+provider:
+  name: aws
+  runtime: python2.7
+  stage: dev
+  region: ${env:AWS_REGION}
+functions:
+  hello:
+    handler: handler.Get
+    events:
+      - http:
+          path: /
+          method: get

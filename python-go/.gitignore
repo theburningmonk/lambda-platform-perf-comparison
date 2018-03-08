@@ -1,0 +1,5 @@
+.env
+.serverless
+*.so
+*.zip
+vendor

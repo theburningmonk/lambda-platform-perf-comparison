@@ -7,3 +7,5 @@
 
 java/target/
 apis.txt
+*.iml
+*.ipr
