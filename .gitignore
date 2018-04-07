@@ -5,5 +5,10 @@
 
 .idea/
 
-java/target/
 apis.txt
+*.iml
+*.ipr
+
+target/
+.settings/
+.project

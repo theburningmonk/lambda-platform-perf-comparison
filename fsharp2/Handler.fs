@@ -6,10 +6,6 @@ open Amazon.Lambda.Core
 do ()
     
 module Handler =
-    open System
-    open System.IO
-    open System.Text
-
     type Response = { statusCode : int; body : string }
 
     let hello(): Response = {
