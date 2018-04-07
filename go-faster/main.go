@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/aws/aws-lambda-go/events"
-	"github.com/aws/aws-lambda-go/lambda"
+	"github.com/yunspace/aws-lambda-go-faster/lambda"
 )
 
 func Handler(request *events.APIGatewayProxyRequest) (*events.APIGatewayProxyResponse, error) {
