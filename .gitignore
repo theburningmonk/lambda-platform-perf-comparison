@@ -12,3 +12,4 @@ apis.txt
 target/
 .settings/
 .project
+.classpath
