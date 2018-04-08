@@ -1,14 +1,13 @@
 namespace AwsDotnetFsharp
 
 open Amazon.Lambda.Core
+open Amazon.Lambda.APIGatewayEvents
 
 [<assembly:LambdaSerializer(typeof<Amazon.Lambda.Serialization.Json.JsonSerializer>)>]
 do ()
     
 module Handler =
-    type Response = { statusCode : int; body : string }
-
-    let hello(): Response = {
-        statusCode = 200
-        body = "hello"
+    let hello(request:APIGatewayProxyRequest, _:ILambdaContext): APIGatewayProxyResponse = {
+        StatusCode = 200
+        Body = "hello"
     }

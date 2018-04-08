@@ -5,10 +5,10 @@ import com.amazonaws.services.lambda.runtime.RequestHandler;
 
 import java.util.Map;
 
-public class Handler implements RequestHandler<Map<String, Object>, Response> {
+public class Handler implements RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
 
     @Override
-    public Response handleRequest(Map<String, Object> input, Context context) {
-        return new Response("hello", 200);
+    public Response handleRequest(APIGatewayProxyRequestEvent input, Context context) {
+        return new APIGatewayProxyResponseEvent().withBody("hello").withStatusCode(200);
     }
 }
