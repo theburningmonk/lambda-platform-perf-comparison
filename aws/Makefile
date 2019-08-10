@@ -7,16 +7,16 @@ COMPOSE_RUN_AUTH = docker-compose run --rm gauth
 all: .env
 	@$(foreach RUNTIME, $(RUNTIMES),cd $(RUNTIME) && make && cd ..;)
 
-packageAll: .env
+package: .env
 	@$(foreach RUNTIME, $(RUNTIMES),cd $(RUNTIME) && make package && cd ..;)
 
-deployAll: .env
+deploy: .env
 	@$(foreach RUNTIME, $(RUNTIMES),cd $(RUNTIME); make deploy && cd ..;)
 
-removeAll: .env
+remove: .env
 	@$(foreach RUNTIME, $(RUNTIMES),cd $(RUNTIME); make remove && cd ..;)
 
-resetDB: .env
+reset: .env
 	@$(foreach RUNTIME, $(RUNTIMES), $(call resetDynamo, $(RUNTIME)) )
 
 auth: .env.auth
