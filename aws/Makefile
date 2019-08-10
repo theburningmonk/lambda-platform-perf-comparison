@@ -13,11 +13,15 @@ package: .env
 deploy: .env
 	@$(foreach RUNTIME, $(RUNTIMES),cd $(RUNTIME); make deploy && cd ..;)
 
+clean: .env
+	@$(foreach RUNTIME, $(RUNTIMES),cd $(RUNTIME); make clean && cd ..;)
+
 remove: .env
 	@$(foreach RUNTIME, $(RUNTIMES),cd $(RUNTIME); make remove && cd ..;)
 
 reset: .env
 	@$(foreach RUNTIME, $(RUNTIMES), $(call resetDynamo, $(RUNTIME)) )
+
 
 auth: .env.auth
 	$(COMPOSE_RUN_AUTH)

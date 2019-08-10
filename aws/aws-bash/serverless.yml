@@ -1,4 +1,4 @@
-service: aws-csharp2-0
+service: aws-bash
 
 provider:
   name: aws
@@ -7,7 +7,7 @@ provider:
 
 functions:
   hello:
-    handler: CsharpHandlers::AwsDotnetCsharp.Handler::Hello
+    handler: function.sh
     events:
       - http:
           path: /

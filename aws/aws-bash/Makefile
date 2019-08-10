@@ -3,7 +3,7 @@ RUNTIME=aws-bash
 include ../common.mk
 
 # Internals
-_clean:
+clean:
 	rm -rf .serverless
 
 build:

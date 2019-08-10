@@ -9,14 +9,10 @@ workflow "AWS Lambda" {
 action "Go 1.x" {
   uses = "docker://flemay/musketeers"
   runs = "make"
-  args = "make package"
+  args = "package"
   env = {
     RUNTIMES = "aws-go1.x "
   }
-}
-
-workflow "Google Functions" {
-  on = "push"
 }
 
 action "C# 2.1" {
