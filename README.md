@@ -1,5 +1,10 @@
-see blog posts for more detail: 
+# serverless-benchmarks
+A multi cloud provider continuation of 
 
 https://read.acloud.guru/comparing-aws-lambda-performance-of-node-js-python-java-c-and-go-29c1163c2581
 
-all the functions are run using the default memory allocation of 1024MB
+## House Rules
+
+1. No caching
+2. Memory = 1GB
+3. ID need to be UUID v4

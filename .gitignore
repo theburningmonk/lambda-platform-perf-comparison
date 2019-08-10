@@ -1,15 +1,22 @@
 .serverless/
-
-*/bin/**
-*/obj/**
-
-.idea/
-
+bin
 apis.txt
+.env
+.env.*
+
+# IDEs
 *.iml
 *.ipr
-
-target/
 .settings/
 .project
 .classpath
+.idea/
+
+# dotnet
+obj
+
+# java
+target/
+
+# node
+node_modules
