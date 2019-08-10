@@ -1,0 +1,13 @@
+service: aws-python
+
+provider:
+  name: aws
+  runtime: python2.7
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: /
+          method: get

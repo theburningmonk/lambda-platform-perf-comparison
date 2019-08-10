@@ -1,0 +1,6 @@
+{
+  "name": "aws-nodejs6.10",
+  "version": "1.0.0",
+  "description": "AWS Node.js 8.10",
+  "main": "handler.js"
+}

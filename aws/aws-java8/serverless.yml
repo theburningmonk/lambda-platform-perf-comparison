@@ -1,0 +1,14 @@
+service: aws-java-maven
+provider:
+  name: aws
+  runtime: java8
+package:
+  artifact: target/hello-dev.jar
+
+functions:
+  hello:
+    handler: com.serverless.Handler
+    events:
+      - http:
+          path: /
+          method: get

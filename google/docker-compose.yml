@@ -1,0 +1,15 @@
+version: '3.4'
+services:
+  google-nodejs:
+    image: launcher.gcr.io/google/nodejs
+    working_dir: /var/task/google-nodejs8
+    volumes:
+      - .:/var/task
+  sls:
+    image: amaysim/serverless:1.30.3
+    env_file: .env
+    entrypoint: serverless
+    volumes:
+      - ~/.gcloud:/root/.gcloud
+      - .:/opt/app
+    working_dir: /opt/app

@@ -1,0 +1,8 @@
+{
+ "name": "azure-nodejs",
+ "version": "0.1.0",
+ "author": "Yunspace",
+ "dependencies": {
+  "serverless-azure-functions": "^0.6.0"
+ }
+}

@@ -1,0 +1,63 @@
+version: '3.4'
+services:
+  sls:
+    image: amaysim/serverless:1.30.3
+    env_file: .env
+    entrypoint: serverless
+    volumes:
+      - ~/.aws:/root/.aws
+      - .:/opt/app
+  aws-csharp2.0:
+    image: lambci/lambda:build-dotnetcore2.0
+    working_dir: /var/task/aws-csharp2.0
+    volumes:
+      - .:/var/task
+  aws-csharp2.1:
+    build:
+      context: .
+      dockerfile: Dockerfile-lambdatools
+    working_dir: /var/task/aws-csharp2.1
+    volumes:
+      - .:/var/task
+  aws-fsharp2.0:
+    image: lambci/lambda:build-dotnetcore2.0
+    working_dir: /var/task/aws-fsharp2.0
+    volumes:
+      - .:/var/task  
+  aws-fsharp2.1:
+    build:
+      context: .
+      dockerfile: Dockerfile-lambdatools
+    working_dir: /var/task/aws-fsharp2.1
+    volumes:
+      - .:/var/task  
+  aws-go1.x:
+    image: lambci/lambda:build-go1.x
+    working_dir: /var/task/aws-go1.x
+    volumes:
+      - .:/var/task  
+  aws-nodejs6.10:
+    image: lambci/lambda:build-nodejs6.10
+    working_dir: /var/task/aws-nodejs6.10
+    volumes:
+      - .:/var/task
+  aws-nodejs8.10:
+    image: lambci/lambda:build-nodejs8.10
+    working_dir: /var/task/aws-nodejs8.10
+    volumes:
+      - .:/var/task
+  aws-java8:
+    image: maven:3.5.4-jdk-8
+    working_dir: /var/task/aws-java8
+    volumes:
+      - .:/var/task  
+  aws-python2.7:
+    image: lambci/lambda:build-python2.7
+    working_dir: /var/task/aws-python2.7
+    volumes:
+      - .:/var/task  
+  aws-python3.6:
+    image: lambci/lambda:build-python3.6
+    working_dir: /var/task/aws-python3.6
+    volumes:
+      - .:/var/task  
