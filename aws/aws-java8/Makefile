@@ -6,5 +6,5 @@ include ../common.mk
 _clean:
 	rm -rf .serverless target
 
-build:
-	$(BUILDER) mvn package
+_build:
+	mvn package

@@ -1,9 +1,5 @@
 BUILDER=docker-compose -f ../docker-compose.yml run --rm $(RUNTIME)
-ifdef NATIVE
-	SLS=serverless
-else
-	SLS=docker-compose -f ../docker-compose.yml run --rm -w /opt/app/$(RUNTIME) sls
-endif
+SLS=docker-compose -f ../docker-compose.yml run --rm -w /opt/app/$(RUNTIME) sls
 
 # Builder
 all: clean package deploy
@@ -11,12 +7,15 @@ all: clean package deploy
 clean: .env
 	$(BUILDER) make _clean
 
+build:
+	$(BUILDER) make _build
+
 # Serverless
 package: .env build
 	$(SLS) package
 
 deploy: .env
-	$(SLS) deploy --region ap-northeast-1
+	$(SLS) deploy
 
 remove: .env
 	$(SLS) remove

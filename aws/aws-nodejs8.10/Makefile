@@ -6,5 +6,5 @@ include ../common.mk
 _clean:
 	rm -rf .serverless bin node_modules
 
-build:
+_build:
 	npm install --ignore-scripts

@@ -1,0 +1,14 @@
+service: aws-csharp2-0
+
+provider:
+  name: aws
+  runtime: provided
+  region: ap-southeast-2
+
+functions:
+  hello:
+    handler: CsharpHandlers::AwsDotnetCsharp.Handler::Hello
+    events:
+      - http:
+          path: /
+          method: get

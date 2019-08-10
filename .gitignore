@@ -2,7 +2,7 @@
 bin
 apis.txt
 .env
-.env.*
+.env.auth
 
 # IDEs
 *.iml

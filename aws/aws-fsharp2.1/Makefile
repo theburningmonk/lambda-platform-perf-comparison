@@ -6,9 +6,6 @@ include ../common.mk
 _clean:
 	rm -rf .serverless bin obj
 
-build:
-	$(BUILDER) make _build
-
 _build:
 	dotnet restore && \
 		dotnet lambda package -c release -f netcoreapp2.1 --o bin/release/netcoreapp2.1/publish/deploy-package.zip

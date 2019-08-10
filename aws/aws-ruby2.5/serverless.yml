@@ -1,13 +1,12 @@
-service: aws-python3-6
+service: aws-ruby-2-5
 
 provider:
   name: aws
-  runtime: python3.6
+  runtime: ruby2.5
 
 functions:
   hello:
     handler: handler.hello
-
     events:
       - http:
           path: /

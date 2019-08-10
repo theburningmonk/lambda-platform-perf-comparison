@@ -6,9 +6,6 @@ include ../common.mk
 _clean:
 	rm -rf .serverless bin
 
-build:
-	$(BUILDER) make _build
-
 _build:
 	go get -u github.com/aws/aws-lambda-go/lambda && \
 	go get -u github.com/aws/aws-lambda-go/events && \

@@ -1,33 +1,25 @@
 version: '3.4'
 services:
   sls:
-    image: amaysim/serverless:1.30.3
+    image: amaysim/serverless:1.49.0
     env_file: .env
     entrypoint: serverless
     volumes:
       - ~/.aws:/root/.aws
       - .:/opt/app
-  aws-csharp2.0:
-    image: lambci/lambda:build-dotnetcore2.0
-    working_dir: /var/task/aws-csharp2.0
-    volumes:
-      - .:/var/task
   aws-csharp2.1:
-    build:
-      context: .
-      dockerfile: Dockerfile-lambdatools
+    image: lambci/lambda:build-dotnetcore2.1
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile-lambdatools
     working_dir: /var/task/aws-csharp2.1
     volumes:
       - .:/var/task
-  aws-fsharp2.0:
-    image: lambci/lambda:build-dotnetcore2.0
-    working_dir: /var/task/aws-fsharp2.0
-    volumes:
-      - .:/var/task  
   aws-fsharp2.1:
-    build:
-      context: .
-      dockerfile: Dockerfile-lambdatools
+    image: lambci/lambda:build-dotnetcore2.1
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile-lambdatools
     working_dir: /var/task/aws-fsharp2.1
     volumes:
       - .:/var/task  
@@ -61,3 +53,8 @@ services:
     working_dir: /var/task/aws-python3.6
     volumes:
       - .:/var/task  
+  gauth:
+    image: contino/aws-google-auth:0.0.28
+    env_file: .env.auth
+    volumes:
+      - ~/.aws:/root/.aws

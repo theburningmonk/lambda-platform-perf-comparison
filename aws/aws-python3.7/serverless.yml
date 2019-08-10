@@ -1,13 +1,12 @@
-service: aws-python3-6
+service: aws-python3-7
 
 provider:
   name: aws
-  runtime: python3.6
+  runtime: python3.7
 
 functions:
   hello:
     handler: handler.hello
-
     events:
       - http:
           path: /

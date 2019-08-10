@@ -1,4 +1,4 @@
-service: aws-python
+service: aws-python2-7
 
 provider:
   name: aws
